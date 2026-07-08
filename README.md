@@ -7,7 +7,7 @@ IPTV player. Astro 5 + Tailwind CSS v4, static output, zero client JS.
 
 ```sh
 npm install
-npm run dev        # http://localhost:4321/website/
+npm run dev        # http://localhost:4321/
 npm run build      # dist/
 npm run preview    # serve the production build
 ```
@@ -18,14 +18,14 @@ Pushes to `main` deploy to GitHub Pages via `.github/workflows/deploy.yml`
 (`withastro/action` + `actions/deploy-pages`). **One-time setup:** repo
 Settings → Pages → Source: **GitHub Actions**.
 
-Live at: https://spectra-player.github.io/website/
+Live at: https://spectra-player.github.io/
 
 ### Custom domain later
 
 1. Add `public/CNAME` containing the domain.
 2. Set the Pages custom domain in repo settings.
-3. Build with `SITE_URL=https://yourdomain SITE_BASE=/` (set as `env:` in the
-   workflow or flip the defaults in `astro.config.mjs`).
+3. Build with `SITE_URL=https://yourdomain` (set as `env:` in the workflow or
+   flip the default in `astro.config.mjs`).
 
 ## Screenshot checklist (src/assets/screenshots/)
 
