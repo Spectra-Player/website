@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import DownloadButton from './DownloadButton.astro';
+import wordmark from '../assets/appglyph.png';
+---
+
+<header class="sticky top-0 z-50 border-b border-line bg-ink-950/80 backdrop-blur">
+  <nav class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
+    <a href="#top" aria-label="Spectra home" class="flex items-center">
+      <Image src={wordmark} alt="Spectra" class="h-6 w-auto" densities={[1, 2]} height={24} />
+    </a>
+    <div class="flex items-center gap-6">
+      <a href="#features" class="hidden text-sm text-fg-muted transition hover:text-fg sm:block">Features</a>
+      <a href="#faq" class="hidden text-sm text-fg-muted transition hover:text-fg sm:block">FAQ</a>
+      <DownloadButton size="sm" />
+    </div>
+  </nav>
+</header>

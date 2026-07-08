@@ -1,17 +1,58 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import FeatureSection from '../components/FeatureSection.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
 
+import epgShot from '../assets/screenshots/epg.png';
+import liveTvShot from '../assets/screenshots/live-tv.png';
+import seriesShot from '../assets/screenshots/series.png';
+import playerShot from '../assets/screenshots/player.png';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Nav />
+  <main>
+    <Hero />
+
+    <div id="features" class="border-t border-line">
+      <FeatureSection
+        eyebrow="EPG Guide"
+        title="The guide, done properly."
+        copy="A real programme grid: the channel column stays pinned while you scroll the timeline, SD/HD/FHD variants of the same channel are grouped together, and a red now-line keeps you oriented. Hover any programme for details, or search by programme title to find what's on — and where."
+        image={epgShot}
+        alt="Spectra's EPG guide with pinned channel column, grouped quality variants, and a now-playing line"
+      />
+      <FeatureSection
+        eyebrow="Live TV"
+        title="Live TV without the clutter."
+        copy="Browse channels by category from the sidebar, star your favorites, and find anything instantly with search. Zap between channels with the keyboard — it works like a TV, not a file manager."
+        image={liveTvShot}
+        alt="Spectra's Live TV grid with category sidebar and channel search"
+        reverse
+      />
+      <FeatureSection
+        eyebrow="Movies & Series"
+        title="Series that remember where you were."
+        copy="Continue Watching picks up exactly where you left off. Finish an episode and the next one starts automatically; jump anywhere in a season with the in-player episode picker. Movies resume too."
+        image={seriesShot}
+        alt="Spectra's series view with seasons, episodes, and resume support"
+      />
+      <FeatureSection
+        eyebrow="Playback"
+        title="Playback you can trust."
+        copy="Powered by the VLC engine, Spectra handles the streams providers actually serve — MPEG-TS and HLS alike. If a stream drops or your Mac sleeps, it reconnects on its own instead of leaving you at an error screen."
+        image={playerShot}
+        alt="Spectra's video player with docked control bar and live badge"
+        reverse
+      />
+    </div>
+
+    <FeatureGrid />
+    <FAQ />
+  </main>
+  <Footer />
+</Layout>

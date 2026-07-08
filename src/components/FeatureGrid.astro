@@ -1,0 +1,46 @@
+---
+const items = [
+  {
+    title: 'Native SwiftUI',
+    copy: 'Built for macOS from the first line — not a web wrapper or a port.',
+  },
+  {
+    title: 'One-click updates',
+    copy: 'Sparkle-powered updates straight from the menu bar. No account needed.',
+  },
+  {
+    title: 'Keychain security',
+    copy: 'Your provider credentials live in the macOS Keychain, never in a config file.',
+  },
+  {
+    title: 'No tracking',
+    copy: 'No analytics, no telemetry, no middleman servers. The app talks only to your provider.',
+  },
+  {
+    title: 'Dark-first design',
+    copy: 'A graphite, TV-native look that stays out of the way of what you’re watching.',
+  },
+  {
+    title: 'Apple Silicon & Intel',
+    copy: 'Universal app, fast on everything from an M-series MacBook to older Intel Macs.',
+  },
+];
+---
+
+<section class="border-t border-line bg-ink-900">
+  <div class="mx-auto max-w-6xl px-6 py-20">
+    <h2 class="text-center text-3xl font-semibold tracking-tight sm:text-4xl">
+      …and it&rsquo;s a real Mac&nbsp;app
+    </h2>
+    <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        items.map((item) => (
+          <div class="card-sheen rounded-[var(--radius-card)] border border-line bg-ink-850 p-5 transition hover:border-line-hi">
+            <h3 class="text-sm font-semibold">{item.title}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-fg-muted">{item.copy}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

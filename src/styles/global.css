@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+@theme {
+  /* Background scale — graphite, near-black, matching the app icon tile. */
+  --color-ink-950: #0b0c0e;
+  --color-ink-900: #101114;
+  --color-ink-850: #16181c;
+  --color-ink-800: #1c1f24;
+
+  /* Hairlines. */
+  --color-line: rgb(255 255 255 / 0.08);
+  --color-line-hi: rgb(255 255 255 / 0.14);
+
+  /* Text scale. */
+  --color-fg: rgb(255 255 255 / 0.92);
+  --color-fg-muted: rgb(255 255 255 / 0.6);
+  --color-fg-faint: rgb(255 255 255 / 0.45);
+
+  /* Native-first: SF Pro on Macs (the audience), sane fallbacks elsewhere. */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI",
+    Inter, system-ui, sans-serif;
+
+  --radius-card: 14px;
+  --radius-window: 12px;
+}
+
+/* Soft light source above the hero — the page's only "lighting". */
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -10%,
+    rgb(255 255 255 / 0.08),
+    transparent 60%
+  );
+}
+
+/* Machined-metal top edge for cards. */
+.card-sheen {
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.06);
+}

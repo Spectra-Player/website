@@ -1,0 +1,58 @@
+---
+const faqs = [
+  {
+    q: 'Which providers does Spectra work with?',
+    a: 'Any IPTV provider that uses the Xtream Codes API — the most common panel format. Enter your server address, username, and password, and Spectra loads your channels, guide, movies, and series.',
+  },
+  {
+    q: 'Does Spectra include any channels or content?',
+    a: 'No. Spectra ships no streams, channels, or media of any kind. It is a player for a subscription you already have with your own IPTV provider — like a browser for the service you pay them for.',
+  },
+  {
+    q: 'What are the system requirements?',
+    a: 'macOS 14 Sonoma or later, on Apple Silicon or Intel.',
+  },
+  {
+    q: 'How do updates work?',
+    a: 'Spectra updates itself with built-in Sparkle updates: it checks the public releases feed and installs new versions in one click. No account, no installer downloads.',
+  },
+  {
+    q: 'What about my privacy?',
+    a: 'Your credentials are stored in the macOS Keychain. There are no analytics, no tracking, and no Spectra servers — the app communicates only with your provider, directly.',
+  },
+  {
+    q: 'How much does it cost?',
+    a: 'Spectra is free during the beta. Later, new updates will move to an affordable annual fee — and whatever version you have keeps working forever.',
+  },
+];
+---
+
+<section id="faq" class="border-t border-line">
+  <div class="mx-auto max-w-3xl px-6 py-20">
+    <h2 class="text-center text-3xl font-semibold tracking-tight sm:text-4xl">
+      Frequently asked questions
+    </h2>
+    <div class="mt-10 divide-y divide-line border-y border-line">
+      {
+        faqs.map((faq) => (
+          <details class="group py-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium [&::-webkit-details-marker]:hidden">
+              {faq.q}
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                class="h-4 w-4 shrink-0 text-fg-faint transition-transform group-open:rotate-45"
+                aria-hidden="true"
+              >
+                <path d="M8 3v10M3 8h10" stroke-linecap="round" />
+              </svg>
+            </summary>
+            <p class="mt-3 pr-8 text-sm leading-relaxed text-fg-muted">{faq.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+// Thin styling shell around a full-window app screenshot. The screenshot itself
+// carries the real macOS chrome (rounded corners, traffic lights), so this only
+// adds a hairline ring, depth shadow, and an optional glow.
+interface Props {
+  glow?: boolean;
+}
+const { glow = false } = Astro.props;
+---
+
+<div class="relative">
+  {
+    glow && (
+      <div
+        class="absolute -inset-8 -z-10 rounded-[32px] bg-white/5 blur-3xl"
+        aria-hidden="true"
+      />
+    )
+  }
+  <div class="overflow-hidden rounded-[var(--radius-window)] ring-1 ring-line shadow-2xl shadow-black/60">
+    <slot />
+  </div>
+</div>
